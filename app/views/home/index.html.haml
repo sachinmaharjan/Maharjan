@@ -1,15 +1,17 @@
-%div.container
-	%= link_to "Home", "#" :class => "brand" 
+.container
+  %a.brand{:href => "#"} Project name
   %ul.nav
-		%li.active
-			%= link_to "/index" Home
-    	%li link_to "About", "#about"
-      %li link_to "Contact", "#contact"
+    %li.active
+      %a{:href => "home#index"} Home
+    %li
+      %a{:href => "home#about"} About
+    %li
+      %a{:href => "home#contact"} Contact
 
 
-%div :style=> "margin: 0 auto; text-align:left;"
+%div{:style => "margin: 0 auto; text-align:left;"}
 	%h1 Welcome to Maharjans - Quotes
-	%p If you rise above the pettiness of people and small annoyances……you will be able to give your energy to the important things.
+	%p If you rise above the pettiness of people and small annoyances, you will be able to give your energy to the important things.
 
 	%p You don't make decision because they are easy. You don't make decision because they are cheap. You don't make decisions because they are popular. You make decisions because they are right.
 
