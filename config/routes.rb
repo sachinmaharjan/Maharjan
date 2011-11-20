@@ -1,5 +1,7 @@
 Maharjan::Application.routes.draw do
   get "home/index"
+  resources :home
+  
 
   root :to => "home#index"
 
