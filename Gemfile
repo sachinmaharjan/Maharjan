@@ -8,6 +8,10 @@ gem 'rails', '3.0.10'
 gem 'sqlite3'
 gem 'haml'
 
+group :development do
+  gem 'capistrano', '~> 2.11.2'
+end
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
