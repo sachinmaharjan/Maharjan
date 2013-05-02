@@ -2,8 +2,51 @@
 %html
   %head
     %title Maharjan
-    = stylesheet_link_tag :all
-    = javascript_include_tag :defaults
+    = favicon_link_tag 'rat.png'
+    = stylesheet_link_tag "application"
+    = javascript_include_tag "application"
     = csrf_meta_tag
   %body
-    = yield
+    .topbar
+      .fill
+        .container
+          %a.brand{:href => "/"}
+            %span.logo
+          - if current_user
+            %ul.nav
+              %li.active
+                %a{:href => tasks_path, :class => "pictos iconic-blue-calendar_32x32"}
+              %li
+                %a{:href => new_task_path, :class => "pictos iconic-blue-plus_alt_32x32"}
+              %li
+                %a{:href => "#", :class => "pictos iconic-blue-bars_32x32"}
+          #user_nav
+            - if current_user
+              = succeed " " do
+                %strong
+                  = link_to current_user.name, current_user
+              |
+              = link_to "  Sign out", signout_path, id: "sign_out"
+            - else
+              = link_to image_tag('facebookConnect.png'), "/auth/facebook", id: "sign_in"
+              |
+              = link_to "Sign in", signin_path, :class => "sign_in"
+              
+    
+    .container{:style=>"width:820px; margin:0 auto;"}
+      .content
+        .hero-unit
+          - flash.each do |name, msg|
+            = content_tag :div, msg, :id => "flash_#{name}", :class => "alert-message"
+          = yield
+    
+    %footer
+      %h5 © Maharjan 2013
+      %ul
+        %li.active
+          %a{:href => "/", :class => "pictos iconic-blue-home_16x16", :title => "Home"} Home
+        %li
+          %a{:href => "/about", :class => "pictos iconic-blue-user_12x16", :title => "About"} About
+        %li
+          %a{:href => "/contact", :class => "pictos iconic-blue-at_16x16", :title => "Contact"} Contact
+      

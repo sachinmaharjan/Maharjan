@@ -1,0 +1,8 @@
+%h2  Details
+%h5
+	= gravatar_for @user
+= @user.name
+| 
+= link_to "Edit", edit_user_path
+%br
+= @user.email

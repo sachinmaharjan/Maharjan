@@ -1,11 +1,25 @@
 Maharjan::Application.routes.draw do
+  resources :tasks
+
+
+  get "error/nocheese4u"
+
+  get "users/new"
+
   match '/home' => 'home#index'
   match '/' => 'home#index'
   match '/about' => 'home#about'
   match '/contact' => 'home#contact'
   get "home/index"
   
+  resources :sessions, :only => [:new, :create, :destroy]
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: redirect('/')
+  match '/signout', to: 'sessions#destroy'
+  match '/signup', to: 'users#new'
+  match '/signin', to: 'sessions#new'
   
+  resources :users
 
   root :to => "home#index"
 

@@ -1,15 +1,33 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.10'
+gem 'rails', '3.2.11'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
 gem 'haml'
+gem 'bcrypt-ruby', '3.0.1'
+gem 'omniauth-facebook'
+gem 'sass-rails', '~> 3.2'
+gem 'bootstrap-sass', '~> 2.3.1.0'
+gem 'gravatar_image_tag', '1.0.0.pre2'
+gem 'compass-rails', '1.0.3'
+gem 'hominid'
+gem 'pictos-free', '~> 0.0.1'
+gem 'jquery-rails'
+gem 'coffee-rails', '~> 3.2.2'
+
+group :assets do
+  gem 'uglifier'
+  gem 'therubyracer'
+  # include other compass plugins here. E.g.:
+  # gem 'compass-susy-plugin', :require => 'susy'
+end
 
 group :development do
   gem 'capistrano', '~> 2.11.2'
+  gem 'bullet'
 end
 
 # Use unicorn as the web server
@@ -32,7 +50,17 @@ end
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do
-  #gem 'webrat'
-  gem 'rspec'
+  gem 'webrat'
+  gem 'rspec-rails', '~> 2.13.0'
+  gem 'factory_girl_rails', '~> 4.0'
   gem 'fixture_builder'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
+group :test do
+  	gem 'spork'
+  	gem 'rspec', '~> 2.13.0'
+  	gem 'timecop'
+  	gem 'fakeweb'
 end
