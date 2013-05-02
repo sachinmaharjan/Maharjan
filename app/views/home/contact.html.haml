@@ -1,23 +1,5 @@
-.topbar
-  .fill
-    .container
-      %a.brand{:href => "/"} MaharZen
-      %ul.nav
-        %li
-          %a{:href => "/"} Home
-        %li
-          %a{:href => "/about"} About
-        %li.active
-          %a{:href => "/contact"} Contact
-
-.container{:style=>"width:820px; margin:0 auto;"}
-  .content
-    .hero-unit
-      %h2 Contact!
-      %h5 @ sachin.gen@gmail.com
-      %h5 f: /sachin.maharjan
-      %h5 t: #sachinmaharjan
-      %h5 tumbler: sachinmaharjan.tumbler.com
-  
-%footer
-  %h5 © Sachin Maharjan 2013
+%h2 Contact!
+= link_to "sachin.gen@gmail.com", 'mailto:sachin.gen@gmail.com'
+%p f: /chinny.maharjan
+%p t: #sachinmaharjan
+%p tumblr: sachinmaharjan.tumblr.com

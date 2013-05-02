@@ -1,0 +1,16 @@
+%h2 Sign up
+= form_for(@user) do |f|
+  = render 'shared/error_messages'
+  = f.label :name
+  = f.text_field :name
+  %br
+  = f.label :email
+  = f.text_field :email
+  %br
+  = f.label :password
+  = f.password_field :password
+  %br
+  = f.label :password_confirmation, "Confirmation"
+  = f.password_field :password_confirmation
+  .actions
+    = f.submit "Sign up"

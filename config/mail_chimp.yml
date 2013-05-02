@@ -1,0 +1,16 @@
+common: &default_settings
+  api_key: "98abf81b3b491446a14199d0fc058207-us4"
+  subscriber_list: "6f921f73fc"
+
+development:
+  <<: *default_settings
+test:
+  <<: *default_settings
+demo:
+  <<: *default_settings
+staging:
+  <<: *default_settings
+
+production:
+  api_key: "98abf81b3b491446a14199d0fc058207-us4"
+  subscriber_list: "6f921f73fc"
