@@ -1,0 +1,14 @@
+%h2 Recent Tasks
+- @tasks.each do |task|
+  .task
+    .details
+      %p
+        = link_to task.headline, task 
+      %span.line-heart-pictos.iconic-blue-heart_fill_16x14
+      - if !task.completed_at.nil? 
+        = time_ago_in_words(task.completed_at) 
+        ago
+        %span.line-pictos.iconic-blue-clock_16x16
+    .action
+      = link_to '', edit_task_path(task), :class => "link-pictos iconic-blue-pen_16x16", title: "Edit"
+      = link_to '', task, class: "link-pictos iconic-blue-x_alt_16x16", method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete"

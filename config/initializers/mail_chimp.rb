@@ -1,0 +1,1 @@
+MAIL_CHIMP = YAML.load_file("#{Rails.root}/config/mail_chimp.yml")
