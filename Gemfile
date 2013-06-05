@@ -17,6 +17,7 @@ gem 'hominid'
 gem 'pictos-free', '~> 0.0.1'
 gem 'jquery-rails'
 gem 'coffee-rails', '~> 3.2.2'
+gem 'gchartrb'
 
 group :assets do
   gem 'uglifier'

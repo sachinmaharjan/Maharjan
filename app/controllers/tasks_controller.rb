@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.find(:all, :order => "created_at DESC")
+    @tasks = Task.find_all_by_user_id(current_user.id, :order => "created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb

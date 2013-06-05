@@ -3,8 +3,13 @@
   .task
     .details
       %p
-        = link_to task.headline, task 
-      %span.line-heart-pictos.iconic-blue-heart_fill_16x14
+        = link_to task.headline, task
+      = link_to '', :href => "/likes?task_id=#{task.id}", "data-remote" => true, :class => "line-heart-pictos.iconic-blue-heart_fill_16x14" do
+        - if task.like.count > 0
+          %span.line-heart-pictos.iconic-blue-heart_red_16x14
+        - else
+          %span.line-heart-pictos.iconic-blue-heart_fill_16x14
+      %span= task.like.count
       - if !task.completed_at.nil? 
         = time_ago_in_words(task.completed_at) 
         ago

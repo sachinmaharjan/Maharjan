@@ -5,10 +5,13 @@
         - @task.errors.full_messages.each do |msg|
           %li= msg
   .field
-    = f.label :headline
+    = f.label :task
     = f.text_field :headline
   .field
     = f.label :done
     = f.check_box :is_completed
+  .field
+    = f.label "Make this Private"
+    = f.check_box :private
   .actions
     = f.submit

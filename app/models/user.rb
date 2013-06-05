@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   before_save :encrypt_password
   after_create :create_user_with_welcome_email
 
-  has_many :tasks
+  has_many :task
+  has_many :like
   
   validates :name, presence: true, length: { maximum: 50, minimum: 2}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

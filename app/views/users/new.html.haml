@@ -1,5 +1,7 @@
-%h2 Sign up
-= form_for(@user) do |f|
+
+= form_for(@user, :html => { :class => 'signup-form' }) do |f|
+  .modal-header
+    %h2 Sign up
   = render 'shared/error_messages'
   = f.label :name
   = f.text_field :name
@@ -13,4 +15,4 @@
   = f.label :password_confirmation, "Confirmation"
   = f.password_field :password_confirmation
   .actions
-    = f.submit "Sign up"
+    = f.submit "Sign up", :class => "btn btn-large btn-success"

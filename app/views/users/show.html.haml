@@ -2,7 +2,22 @@
 %h5
 	= gravatar_for @user
 = @user.name
-| 
-= link_to "Edit", edit_user_path
+= link_to '', edit_user_path, :class => "link-pictos iconic-blue-pen_16x16", title: "Edit"
 %br
 = @user.email
+%br
+%strong Link Facebook
+%br
+= link_to 'Facebook', '#', :class => "btn bt-large btn-info"
+%br
+%strong Link Twitter
+%br
+= link_to 'Twitter', '#', :class => "btn -btn-large btn-info"
+
+%h3 Task Created: #{@tasks.count}
+
+%h3 Task Completed: #{@completed.count}
+
+%h3 Task Remaining: #{@tasks.count - @completed.count}
+
+<img src="#{@chart.to_url}" />

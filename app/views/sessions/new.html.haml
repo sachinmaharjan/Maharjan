@@ -1,11 +1,11 @@
-%h2 Sign in
 .row
   .span6.offset3
-    = form_for(:session, url: sessions_path) do |f|
-      = f.label :email
-      = f.text_field :email
-      = f.label :password
-      = f.password_field :password
-      = f.submit "Sign in", class: "btn btn-large btn-primary"
-    %p
-      New user? #{link_to "Sign up now!", signup_path}
+
+    = form_for(:session, url: sessions_path, :html => { :class => 'sign-form' }) do |f|
+      .modal-header
+        %h3 Sign in
+      = f.text_field :email, :class => "iconic-blue-at_32x32"
+      = f.password_field :password, :class => "iconic-blue-key_stroke_32x32"
+      .buttons
+        = f.submit "Log in", class: "btn btn-info btn-large btn-left"
+        #{link_to "Sign up now!", signup_path, class: "btn-right"}

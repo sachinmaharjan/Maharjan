@@ -1,5 +1,6 @@
 Maharjan::Application.routes.draw do
   resources :tasks
+  resources :likes
 
 
   get "error/nocheese4u"
