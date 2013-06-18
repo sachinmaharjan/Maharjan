@@ -14,9 +14,10 @@
       %span.likecounter= task.like.count > 0 ? task.like.count : ""
       - if !task.completed_at.nil?
         %span.dot .
-        %span.line-pictos.iconic-blue-check_alt_16x16
-        = time_ago_in_words(task.completed_at) 
+        Completed:
+        = time_ago_in_words(task.completed_at)
         ago
+        %span.line-pictos.iconic-blue-check_alt_16x16
 
     .action
       = link_to '', edit_task_path(task), :class => "link-pictos iconic-blue-pen_16x16", title: "Edit"

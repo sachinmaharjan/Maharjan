@@ -1,7 +1,12 @@
 %p
+  %b Task:
   = @task.headline
 %p
-  %b Completed at:
-  = @task.completed_at
+  %b Created at:
+  = @task.created_at
+- if !@task.completed_at.nil?
+  %p
+    %b Completed at:
+    = @task.completed_at
 .action
   = link_to '', edit_task_path(@task), :class => "link-pictos iconic-blue-pen_16x16", title: "Edit"
