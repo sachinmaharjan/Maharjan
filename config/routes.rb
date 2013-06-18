@@ -1,6 +1,9 @@
 Maharjan::Application.routes.draw do
+
+
   resources :tasks
   resources :likes
+  resources :stats
 
 
   get "error/nocheese4u"
@@ -11,6 +14,7 @@ Maharjan::Application.routes.draw do
   match '/' => 'home#index'
   match '/about' => 'home#about'
   match '/contact' => 'home#contact'
+  match '/stats' => 'stats#index'
   get "home/index"
   
   resources :sessions, :only => [:new, :create, :destroy]

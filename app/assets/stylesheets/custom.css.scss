@@ -2600,7 +2600,6 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   height: 14px;
   position: relative;
   top: 1px;
-  margin-right: 10px;
 }
 
 
@@ -2612,7 +2611,11 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
   top: 1px;
 }
 
-
+span.dot {
+  font-size: 15px;
+  margin: 0 5px;
+  font-weight: bold;
+}
 .topbar div > ul .active > a, .nav .active > a {
   background-color: transparent;
 }

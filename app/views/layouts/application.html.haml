@@ -5,6 +5,7 @@
     = favicon_link_tag 'rat.png'
     = stylesheet_link_tag "application"
     = javascript_include_tag "application"
+    = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
     = csrf_meta_tag
   %body
     .topbar
@@ -15,11 +16,11 @@
           - if current_user
             %ul.nav
               %li.active
-                %a{:href => tasks_path, :class => "pictos iconic-blue-calendar_32x32"}
+                %a{:href => tasks_path, :class => "pictos iconic-blue-home_32x32"}
               %li
                 %a{:href => new_task_path, :class => "pictos iconic-blue-plus_alt_32x32"}
               %li
-                %a{:href => "#", :class => "pictos iconic-blue-bars_32x32"}
+                %a{:href => stats_path, :class => "pictos iconic-blue-bars_alt_28x32"}
           #user_nav
             - if current_user
               = succeed " " do
@@ -41,7 +42,7 @@
           = yield
     
     %footer
-      %h5 © Maharjan 2013
+      %h5 © TaskRat 2013
       %ul
         %li.active
           %a{:href => "/", :class => "pictos iconic-blue-home_16x16", :title => "Home"} Home

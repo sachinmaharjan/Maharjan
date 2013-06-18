@@ -25,7 +25,6 @@ class UsersController < ApplicationController
     @tasks = Task.find_all_by_user_id(@user)
     @completed = Task.find_all_by_user_id_and_is_completed(@user.id, true)
     @chart = piechart(@tasks.count, @completed.count)
-    @linechar = linechar(@tasks.count, @completed.count)
   end
 
   def edit

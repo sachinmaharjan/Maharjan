@@ -13,11 +13,3 @@
 %strong Link Twitter
 %br
 = link_to 'Twitter', '#', :class => "btn -btn-large btn-info"
-
-%h3 Task Created: #{@tasks.count}
-
-%h3 Task Completed: #{@completed.count}
-
-%h3 Task Remaining: #{@tasks.count - @completed.count}
-
-<img src="#{@chart.to_url}" />
