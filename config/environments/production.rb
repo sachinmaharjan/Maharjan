@@ -46,4 +46,19 @@ Maharjan::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  #facebook
+  ENV['FACEBOOK_APP_ID'] = "240715499386843"
+  ENV['FACEBOOK_SECRET'] = "ed5578878c40eadcf1dce93245d18039"
+
+  #mandrill email
+  config.action_mailer.smtp_settings = {
+    :address   => "smtp.mandrillapp.com",
+    :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
+    :enable_starttls_auto => true, # detects and uses STARTTLS
+    :user_name => "sachin.gen@gmail.com",
+    :password  => "xwGHQo3Z5H2ZrnPX5LeT2g", # SMTP password is any valid API key
+    :authentication => 'login', # Mandrill supports 'plain' or 'login'
+    :domain => 'http://protected-cliffs-4995.herokuapp.com', # your domain to identify your server when connecting
+  }
 end

@@ -32,7 +32,7 @@ Maharjan::Application.configure do
     :address   => "smtp.mandrillapp.com",
     :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
     :enable_starttls_auto => true, # detects and uses STARTTLS
-    :user_name => "sachin.gen@gmail.com",
+    :user_name => "taskrat@gmail.com",
     :password  => "xwGHQo3Z5H2ZrnPX5LeT2g", # SMTP password is any valid API key
     :authentication => 'login', # Mandrill supports 'plain' or 'login'
     :domain => 'http://localhost:3000', # your domain to identify your server when connecting
