@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b270f988-be2b-4892-9e1b-b2d0b5838c9c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/mail_chimp.rb" afterPath="$PROJECT_DIR$/app/models/mail_chimp.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/mail_chimp.yml" afterPath="$PROJECT_DIR$/config/mail_chimp.yml" />
     </list>
     <ignored path="Maharjan.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,19 +23,19 @@
     <splitter split-orientation="horizontal" split-proportion="0.86602867">
       <split-first>
         <leaf>
-          <file leaf-file-name="mail_chimp.rb" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="mail_chimp.rb" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/models/mail_chimp.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="5" column="47" selection-start="167" selection-end="167" vertical-scroll-proportion="0.0">
+                <state line="5" column="18" selection-start="138" selection-end="138" vertical-scroll-proportion="0.23595506">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="mail_chimp.yml" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="mail_chimp.yml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/config/mail_chimp.yml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="14" column="23" selection-start="275" selection-end="275" vertical-scroll-proportion="0.6419214">
+                <state line="15" column="0" selection-start="276" selection-end="276" vertical-scroll-proportion="0.0">
                   <folding />
                 </state>
               </provider>
@@ -370,8 +369,8 @@
         <option value="$PROJECT_DIR$/app/views/home/contact.html.haml" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/config/environments/development.rb" />
-        <option value="$PROJECT_DIR$/app/models/mail_chimp.rb" />
         <option value="$PROJECT_DIR$/config/mail_chimp.yml" />
+        <option value="$PROJECT_DIR$/app/models/mail_chimp.rb" />
       </list>
     </option>
   </component>
@@ -984,16 +983,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/mail_chimp.rb">
+    <entry file="file://$PROJECT_DIR$/config/mail_chimp.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="47" selection-start="167" selection-end="167" vertical-scroll-proportion="0.0">
+        <state line="15" column="0" selection-start="276" selection-end="276" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/mail_chimp.yml">
+    <entry file="file://$PROJECT_DIR$/app/models/mail_chimp.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="23" selection-start="275" selection-end="275" vertical-scroll-proportion="0.6419214">
+        <state line="5" column="18" selection-start="138" selection-end="138" vertical-scroll-proportion="0.23595506">
           <folding />
         </state>
       </provider>

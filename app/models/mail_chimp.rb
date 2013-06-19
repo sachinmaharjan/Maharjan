@@ -3,7 +3,6 @@ class MailChimp
 
   def self.add_user(user)
     h = Hominid::API.new(MAIL_CHIMP[Rails.env]['api_key'])
-    pp MAIL_CHIMP[Rails.env]['subscriber_list']
     h.list_subscribe(MAIL_CHIMP[Rails.env]['subscriber_list'], user.email, {'NAME' => user.name}, 'html', false, true, true, false)
   end
 
