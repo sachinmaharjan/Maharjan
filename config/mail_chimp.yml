@@ -10,6 +10,5 @@ demo:
   <<: *default_settings
 staging:
   <<: *default_settings
-
 production:
   <<: *default_settings

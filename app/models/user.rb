@@ -56,7 +56,7 @@ class User < ActiveRecord::Base
   end
 
   def create_user_with_welcome_email
-    MailChimp.add_user(self)
+    #MailChimp.add_user(self)
     MaharjanMailer.welcome_email(self).deliver
   end
 
