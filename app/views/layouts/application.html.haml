@@ -15,11 +15,11 @@
             %span.logo
           - if current_user
             %ul.nav
-              %li.active
+              %li{:class => ('active' if current_page?(tasks_path))}
                 %a{:href => tasks_path, :class => "pictos iconic-blue-home_32x32"}
-              %li
+              %li{:class => ('active' if current_page?(new_task_path))}
                 %a{:href => new_task_path, :class => "pictos iconic-blue-plus_alt_32x32"}
-              %li
+              %li{:class => ('active' if current_page?(stats_path))}
                 %a{:href => stats_path, :class => "pictos iconic-blue-bars_alt_28x32"}
           #user_nav
             - if current_user
