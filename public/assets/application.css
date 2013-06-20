@@ -16262,7 +16262,6 @@ span.dot {
 /* line 2631, ../../app/assets/stylesheets/custom.css.scss */
 a:hover, .details a:hover {
   color: #333;
-  font-weight: bold;
   background-color: transparent;
   text-decoration: none;
 }

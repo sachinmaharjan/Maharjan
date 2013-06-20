@@ -2557,9 +2557,14 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
 
 #user_nav {
   float: right;
-  padding-top: 10px;
+  padding-top: 5px;
   right: 30px;
   position: absolute;
+  color: #fff6d9;
+}
+
+#user_nav a {
+  color: #fff;
 }
 
 .logo{
@@ -2630,7 +2635,6 @@ span.dot {
 
 a:hover, .details a:hover {
   color: #333;
-  font-weight: bold;
   background-color: transparent;
   text-decoration: none;
 }
