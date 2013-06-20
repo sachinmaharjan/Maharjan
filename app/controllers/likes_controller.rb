@@ -6,8 +6,6 @@ class LikesController < ApplicationController
 
   def index
     @task = Task.find(params[:task_id])
-    pp "task id"
-    pp params[:task_id]
     @like = Like.find_by_task_id_and_user_id(params[:task_id], current_user.id)
     if @like.nil?
       @like = Like.new(:task_id => params[:task_id], :user_id => current_user.id, :like_count => 1)
