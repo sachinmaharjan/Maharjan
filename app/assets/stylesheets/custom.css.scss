@@ -5,8 +5,8 @@
 $grayMediumLight: #eaeaea;
 
 @mixin box_sizing {
-  -moz-box-sizing: border-box; 
-  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -1709,7 +1709,7 @@ a.menu:after, .dropdown-toggle:after {
 footer {
   margin-top: 17px;
   padding-top: 17px;
-/*  border-top: 1px solid #eee;*/
+  /*  border-top: 1px solid #eee;*/
 }
 footer h5 {
   color: white;
@@ -2556,14 +2556,6 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
 }
 
 #user_nav {
-  float: right;
-  padding-top: 5px;
-  right: 30px;
-  position: absolute;
-  color: #fff6d9;
-}
-
-#user_nav a {
   color: #fff;
 }
 
@@ -2585,7 +2577,7 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
 }
 
 .pictos
-{
+  {
   background-color: transparent;
   width: 12px;
   height: 11px;
@@ -2625,11 +2617,11 @@ span.dot {
   background-color: transparent;
 }
 .topbar div > ul > li.active, .nav > li.active
-{
+  {
   background-color: #333;
 }
 .topbar div > ul > li:hover, .nav > li:hover
-{
+  {
   background-color: #000;
 }
 
@@ -2720,4 +2712,22 @@ footer ul li .pictos{
 
 .signup-form .buttons .btn-left {
   float: left;
+}
+.date-header {
+  margin-top: 10px;
+}
+
+.number-circle {
+  background: #BADA55;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: normal;
+  padding: 1px 4px;
+  border: 1px solid #BADA55;
+  /* width and height can be anything, as long as they're equal */
 }

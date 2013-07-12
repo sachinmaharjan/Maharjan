@@ -24,6 +24,7 @@
           #user_nav
             - if current_user
               = succeed " " do
+                %span.iconic-blue-bell
                 %strong
                   = link_to current_user.name, current_user
               |
@@ -31,9 +32,7 @@
             - else
               = link_to image_tag('facebookConnect.png'), "/auth/facebook", id: "sign_in"
               |
-              .btn-group
-                = link_to "Log in", signin_path, :class => "btn btn-primary"
-                = link_to "Sign up", signup_path, :class => "btn btn-success"
+              = link_to "Log in", signin_path
               
     
     .container{:style=>"width:820px; margin:0 auto;"}

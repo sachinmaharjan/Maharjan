@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     end
     if !user.nil?
       session[:user_id] = user.id
-      redirect_to user
+      redirect_to tasks_path
     else
       flash[:error] = "Unable to login with the username and password"
       redirect_to signin_path

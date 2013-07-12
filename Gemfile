@@ -19,6 +19,7 @@ gem 'jquery-rails'
 gem 'coffee-rails', '~> 3.2.2'
 gem 'gchartrb'
 gem 'heroku', '~> 2.4.0'
+gem 'sparklines'
 
 group :assets do
   gem 'uglifier'
