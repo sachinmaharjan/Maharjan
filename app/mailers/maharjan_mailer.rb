@@ -1,10 +1,17 @@
 class MaharjanMailer < ActionMailer::Base
+  layout 'welcome_email'
+  default from: 'taskrat@gmail.com'
+  default url: 'http://protected-cliffs-4995.herokuapp.com/'
 
 	def welcome_email(user)
-		mail :subject => "Welcome #{user.name}",
-			 :to      => user.email,
-			 :from    => "taskrat@gmail.com",
-			 :body    => "Your account has been successfully created."
-	end
-
+    @user = user
+    @url = 'http://protected-cliffs-4995.herokuapp.com/'
+    mail(
+      charset:       "utf-8",
+      content_type:  "text/html",
+      subject:       "Welcome #{@user.name}",
+      to:            @user.email) do |format|
+        format.html { render '/layouts/welcome_email' }
+    end
+  end
 end

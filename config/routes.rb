@@ -26,6 +26,10 @@ Maharjan::Application.routes.draw do
   
   resources :users
 
+  if Rails.env.development?
+    mount MaharjanMailer::Preview => 'preview_email'
+  end
+
   root :to => "home#index"
 
   # The priority is based upon order of creation:
