@@ -19,7 +19,6 @@ gem 'jquery-rails'
 gem 'coffee-rails', '~> 3.2.2'
 gem 'gchartrb'
 gem 'heroku', '~> 2.4.0'
-gem 'sparklines'
 
 group :assets do
   gem 'uglifier'
@@ -64,6 +63,7 @@ group :development, :test do
   gem 'fixture_builder'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'mail_view', git: 'git://github.com/37signals/mail_view.git', ref: '6a4bc7f01a'
 end
 
 group :test do

@@ -1,34 +1,46 @@
-%h2.task-header Recent Tasks
+.span10
+  %h2.task-header Recent Tasks
 
--@tasks.group_by {|t| t.created_at.at_beginning_of_day}.each do |created_at, tasks|
-  %h3.date-header
-    = created_at.strftime("%b %d, %Y %A")
-    %span.number-circle= tasks.count
+  -@tasks.group_by {|t| t.created_at.at_beginning_of_day}.each do |created_at, tasks|
+    %h3.date-header
+      = created_at.strftime("%b %d, %Y %A")
+      %span.number-circle= tasks.count
 
-  - tasks.each do |task|
-    .task
-      .details
-        %p
-          = link_to task.headline, task
+    - tasks.each do |task|
+      .task
+        .details
+          %p
+            = link_to task.headline, task
 
-        = link_to '', :href => "#like",  :id => "task_link_#{task.id}", "data-remote" => true, :onclick => "taskrat.liketask(#{task.id})", :class => "line-heart-pictos.iconic-blue-heart_fill_16x14" do
-          - if task.like.count > 0
-            %span.line-heart-pictos.iconic-blue-heart_fill_16x14
-          - else
-            %span.line-heart-pictos.iconic-blue-heart_stroke_16x14
+          = link_to '', :href => "#like",  :id => "task_link_#{task.id}", "data-remote" => true, :onclick => "taskrat.liketask(#{task.id})", :class => "line-heart-pictos.iconic-blue-heart_fill_16x14" do
+            - if task.like.count > 0
+              %span.line-heart-pictos.iconic-blue-heart_fill_16x14
+            - else
+              %span.line-heart-pictos.iconic-blue-heart_stroke_16x14
 
-        %span.likecounter= task.like.count > 0 ? task.like.count : ""
-        - if !task.completed_at.nil?
-          %span.dot .
-          Completed:
-          = time_ago_in_words(task.completed_at)
+          %span.likecounter= task.like.count > 0 ? task.like.count : ""
+          - if !task.completed_at.nil?
+            %span.dot .
+            Completed:
+            = time_ago_in_words(task.completed_at)
+            ago
+            %span.line-pictos.iconic-blue-check_alt_16x16
+
+        .action
+          = link_to '', edit_task_path(task), :class => "link-pictos iconic-blue-pen_16x16", title: "Edit"
+          = link_to '', task, class: "link-pictos iconic-blue-x_alt_16x16", method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete"
+
+        .createdat
+          = time_ago_in_words(task.created_at)
           ago
-          %span.line-pictos.iconic-blue-check_alt_16x16
 
-      .action
-        = link_to '', edit_task_path(task), :class => "link-pictos iconic-blue-pen_16x16", title: "Edit"
-        = link_to '', task, class: "link-pictos iconic-blue-x_alt_16x16", method: :delete, data: { confirm: 'Are you sure?' }, title: "Delete"
+.span2
+  .created
+    Tasks
+  .completed
+    Completed
+  .deleted
+    %span.line-heart-pictos.iconic-blue-trash_stroke_32x32
 
-      .createdat
-        = time_ago_in_words(task.created_at)
-        ago
+
+
