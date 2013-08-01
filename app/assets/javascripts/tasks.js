@@ -5,6 +5,7 @@ var taskrat = {
   liketask: function(id) {
     $.ajax({
         url: '/likes?task_id=' + id,
+        beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
         dataType: 'json',
         success: function(xhr, textStatus) {
           var like = xhr['like'];
@@ -16,19 +17,24 @@ var taskrat = {
         }
 
     });
+  },
+
+  deletetask: function(id) {
+     if (confirm('Delete task?'))
+     {
+        $.ajax({
+            type: "DELETE",
+            beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+            url: '/tasks/' + id,
+            dataType: 'json',
+            success: function(xhr, textStatus) {
+              $('#task_'+id).hide();
+            },
+            error: function(xhr, textStatus, errorThrown) {
+               alert('Opps! Something went wrong');
+            }
+
+        });
+     }
   }
 };
-
-
-//$('form').submit(function() {
-//    var valuesToSubmit = $(this).serialize();
-//    $.ajax({
-//        url: $(this).attr('action'), //sumbits it to the given url of the form
-//        data: valuesToSubmit,
-//        dataType: "JSON" // you want a difference between normal and ajax-calls, and json is standard
-//    }).success(function(json){
-//        //act on result.
-//    });
-//    return false; // prevents normal behaviour
-//});
-//
