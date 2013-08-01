@@ -1,5 +1,7 @@
+%h2 Task Details
+
 %p
-  %b Task:
+  %b Description:
   = @task.headline
 %p
   %b Created at:
@@ -8,5 +10,10 @@
   %p
     %b Completed at:
     = @task.completed_at
-.action
-  = link_to '', edit_task_path(@task), :class => "link-pictos iconic-blue-pen_16x16", title: "Edit"
+- if @task.is_deleted
+  %span.label.important
+    Deleted.
+  No further updates can be made.
+- else
+  .action
+    = link_to '', edit_task_path(@task), :class => "link-pictos iconic-blue-pen_16x16", title: "Edit"

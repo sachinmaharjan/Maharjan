@@ -1,11 +1,12 @@
 class TasksController < ApplicationController
-  before_filter :require_login
+  before_filter :require_login , :only => [:index, :show, :new, :edit, :create, :update]
 
   # GET /tasks
   # GET /tasks.json
   def index
     @tasks = Task.find_all_by_user_id(current_user.id, :order => "created_at DESC")
-
+    @completed = Task.find_all_by_user_id_and_is_completed(current_user.id, true)
+    @deleted = Task.find_all_by_user_id_and_is_deleted(current_user.id, true)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @tasks }
@@ -74,11 +75,16 @@ class TasksController < ApplicationController
   # DELETE /tasks/1.json
   def destroy
     @task = Task.find(params[:id])
-    @task.destroy
+    @task.is_deleted = true
 
     respond_to do |format|
-      format.html { redirect_to tasks_url }
-      format.json { head :no_content }
+      if @task.save
+        format.html { redirect_to @task, notice: 'Task was successfully deleted.' }
+        format.json { render json: @task, status: :ok, location: @task }
+      else
+        format.html { render action: "show" }
+        format.json { render json: @task.errors, status: :unprocessable_entity }
+      end
     end
   end
 end
