@@ -22,10 +22,8 @@ Maharjan::Application.routes.draw do
   match '/signin', to: 'sessions#new'
   
   resources :users
-
-  if Rails.env.development?
-    mount MaharjanMailer::Preview => 'preview_email'
-  end
+  
+  mount MaharjanMailer::Preview => 'preview_email'
 
   root :to => "home#index"
 
