@@ -5,7 +5,6 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-
 gem 'haml'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'omniauth-facebook'
@@ -16,9 +15,11 @@ gem 'compass-rails', '1.0.3'
 gem 'hominid'
 gem 'pictos-free', '~> 0.0.1'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'coffee-rails', '~> 3.2.2'
 gem 'gchartrb'
 gem 'heroku', '~> 2.4.0'
+gem 'best_in_place'
 
 group :assets do
   gem 'uglifier'

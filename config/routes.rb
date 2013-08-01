@@ -1,13 +1,10 @@
 Maharjan::Application.routes.draw do
 
-
   resources :tasks
   resources :likes
   resources :stats
 
-
   get "error/nocheese4u"
-
   get "users/new"
 
   match '/home' => 'home#index'

@@ -904,6 +904,7 @@ textarea[readonly] {
   padding: 17px 20px 18px 150px;
 
 }
+
 .actions .secondary-action {
   float: right;
 }
@@ -1702,7 +1703,7 @@ a.menu:after, .dropdown-toggle:after {
   letter-spacing: -1px;
 }
 .hero-unit p {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 200;
   line-height: 27px;
 }
@@ -2730,9 +2731,24 @@ footer ul li .pictos{
   padding: 1px 4px;
   border: 1px solid #BADA55;
   /* width and height can be anything, as long as they're equal */
+  display: none;
 }
 
-.iconic-blue-trash_stroke_32x32 {
+.iconic-blue-trash_stroke_32x32, .iconic-blue-trash_fill_32x32, .iconic-blue-check_alt_32x32 {
   width: 32px;
   height: 32px;
+}
+
+.iconic-blue-layers_32x28 {
+  width: 32px;
+  height: 28px;
+}
+
+.sidebar {
+  position: absolute;
+  top: 50px;
+}
+
+.action a:first-child {
+  display: block;
 }
