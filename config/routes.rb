@@ -1,6 +1,11 @@
 Maharjan::Application.routes.draw do
 
-  resources :tasks
+  resources :tasks do
+    collection do
+      get 'deleted'
+      get 'completed'
+    end
+  end
   resources :likes
   resources :stats
 
@@ -22,7 +27,7 @@ Maharjan::Application.routes.draw do
   match '/signin', to: 'sessions#new'
   
   resources :users
-  
+
   mount MaharjanMailer::Preview => 'preview_email'
 
   root :to => "home#index"

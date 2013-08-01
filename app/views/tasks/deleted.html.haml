@@ -1,5 +1,5 @@
-.span10
-  %h2.task-header Recent Tasks
+.span10.deleted
+  %h2.task-header Deleted Tasks
 
   -@tasks.group_by {|t| t.created_at.at_beginning_of_day}.each do |created_at, tasks|
     %h3.date-header
