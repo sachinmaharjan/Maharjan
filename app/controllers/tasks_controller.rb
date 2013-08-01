@@ -4,11 +4,28 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.find_all_by_user_id(current_user.id, :order => "created_at DESC")
-    @completed = Task.find_all_by_user_id_and_is_completed(current_user.id, true)
-    @deleted = Task.find_all_by_user_id_and_is_deleted(current_user.id, true)
+    @tasks = Task.find_all_by_user_id_and_is_deleted(current_user.id, false, :order => "created_at DESC")
+    get_stats
     respond_to do |format|
       format.html # index.html.erb
+      format.json { render json: @tasks }
+    end
+  end
+
+  def deleted
+    @tasks = Task.find_all_by_user_id_and_is_deleted(current_user.id, true, :order => "created_at DESC")
+    get_stats
+    respond_to do |format|
+      format.html
+      format.json { render json: @tasks }
+    end
+  end
+
+  def completed
+    @tasks = Task.find_all_by_user_id_and_is_completed(current_user.id, true, :order => "created_at DESC")
+    get_stats
+    respond_to do |format|
+      format.html
       format.json { render json: @tasks }
     end
   end
@@ -87,4 +104,11 @@ class TasksController < ApplicationController
       end
     end
   end
+
+  private
+    def get_stats
+      @alltasks = Task.find_all_by_user_id_and_is_deleted(current_user.id, false, :order => "created_at DESC").length
+      @completed = Task.find_all_by_user_id_and_is_completed(current_user.id, true).length
+      @deleted = Task.find_all_by_user_id_and_is_deleted(current_user.id, true).length
+    end
 end

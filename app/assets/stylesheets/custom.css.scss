@@ -2752,3 +2752,14 @@ footer ul li .pictos{
 .action a:first-child {
   display: block;
 }
+
+.deleted {
+  h2,a{
+  color: #cd5c5c;
+  }
+}
+.completed {
+  h2,a{
+    color: #2e8b57;
+  }
+}

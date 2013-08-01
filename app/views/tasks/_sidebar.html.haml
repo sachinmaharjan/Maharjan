@@ -1,0 +1,19 @@
+.span2.sidebar
+  .created
+    = link_to "Tasks", tasks_path
+    %br/
+    %span.line-heart-pictos.iconic-blue-layers_32x28
+    %span.count
+      = @alltasks
+  .completed
+    = link_to "Completed", completed_tasks_path
+    %br/
+    %span.line-heart-pictos.iconic-blue-check_alt_32x32
+    %span.count
+      = @completed
+  .deleted
+    = link_to "Deleted", deleted_tasks_path
+    %br/
+    %span.line-heart-pictos.iconic-blue-trash_fill_32x32
+    %span.count
+      = @deleted
