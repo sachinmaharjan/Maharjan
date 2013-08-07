@@ -30,8 +30,8 @@ staging:
   pool: 5
   database: taskrat_staging
   username: taskrat
-  password:
-  host: db.taskrat.com
+  password: C9290zL545j5
+  host: taskrat-db01.ceiwytlkufnq.us-east-1.rds.amazonaws.com
   port: 3306
 
 production:
@@ -41,6 +41,6 @@ production:
   pool: 5
   database: taskrat_production
   username: taskrat
-  password:
-  host: db.taskrat.com
+  password: C9290zL545j5
+  host: taskrat-db01.ceiwytlkufnq.us-east-1.rds.amazonaws.com
   port: 3306

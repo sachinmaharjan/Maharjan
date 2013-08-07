@@ -21,6 +21,9 @@ gem 'gchartrb'
 gem 'heroku', '~> 2.4.0'
 gem 'best_in_place'
 gem 'mail_view', git: 'git://github.com/37signals/mail_view.git', ref: '6a4bc7f01a'
+gem 'open4' # required by rubber
+gem 'rubber', :git => 'git://github.com/rubber/rubber.git'
+gem 'unicorn'
 
 group :assets do
   gem 'uglifier'
@@ -30,7 +33,8 @@ group :assets do
 end
 
 group :development do
-  gem 'capistrano', '~> 2.11.2'
+  gem 'capistrano', '~> 2.12'
+  gem 'ruby-graphviz', :require => 'graphviz' # Optional: only required for graphing
   gem 'bullet'
 end
 

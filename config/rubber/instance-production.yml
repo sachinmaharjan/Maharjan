@@ -1,0 +1,38 @@
+---
+- !ruby/object:Rubber::Configuration::InstanceItem
+  name: web01
+  domain: foo.com
+  roles:
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: web
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: db
+    options:
+      primary: true
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: collectd
+    options: {}
+  - !ruby/object:Rubber::Configuration::RoleItem
+    name: monit
+    options: {}
+  instance_id: i-58213931
+  image_type: t1.micro
+  image_id: ami-3e02f257
+  security_groups:
+  - taskrat_production_default
+  - taskrat_production_web
+  - taskrat_production_web01
+  - taskrat_production_db
+  - taskrat_production_collectd
+  - taskrat_production_monit
+  external_host: ec2-50-19-162-165.compute-1.amazonaws.com
+  external_ip: 50.19.162.165
+  internal_host: ip-10-196-186-119.ec2.internal
+  internal_ip: 10.196.186.119
+  zone: us-east-1d
+  provider: aws
+  platform: linux
+  root_device_type: ebs
+- volumes: {}
+  static_ips: {}
