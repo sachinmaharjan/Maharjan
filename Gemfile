@@ -75,3 +75,5 @@ group :test do
   	gem 'timecop'
   	gem 'fakeweb'
 end
+gem 'rubber'
+gem 'open4'
