@@ -1,0 +1,14 @@
+<%
+  @path = "#{Rubber.root}/config/database.yml"
+%>
+
+<%= Rubber.env %>:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  pool: 5
+  database: <%= rubber_env.db_name %>
+  username: taskrat
+  password: C9290zL545j5
+  host: taskrat-db01.ceiwytlkufnq.us-east-1.rds.amazonaws.com
+  port: 3306
